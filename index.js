@@ -9,7 +9,7 @@ const uri = "mongodb+srv://Unigrocery:jHhUHk29D78oS6iI@cluster0.2zyy2qt.mongodb.
         console.log(`connection succesfully at ${curretTime} Pakistan Aisa`);
 
     });
-
+ app.listen(5000);
     
 
 
