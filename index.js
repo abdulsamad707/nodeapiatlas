@@ -17,28 +17,31 @@ const uri = "mongodb://127.0.0.1/grocerystore";
             app.get('/products',async function(req,res){
                   let ProductData=await products.find();
                    res.send(ProductData);
-                
-                   /*
-                products.find({},function(err,products){
-                      console.log(products);
-                       res.json(products);
-                  });*/
             });
-            app.get('/users',async (req,res)=>{
-              /*  users.find({},function(err,users){
-                       res.json(users);
-                  });
-                  */
-                 userData=await users.find();
-                 res.send(userData);
-            });
+        
             app.post("/registeruser", async (reqe,res)=>{
               let userRegisterStatus=new users(reqe.body);
-         
-               let result =await userRegisterStatus.save();
-                res.send({"message":"Data Save"});
-
+              let result =await userRegisterStatus.save();
+              res.send({"message":"Data Save"});
             });
+            app.get('/users',async (req,res)=>{
+              userData=await users.find();
+              res.send(userData);
+            });
+
+
+            app.put("/update/:_id",async (req,res)=>{
+                    let updateData=await users.updateOne(req.params,{$set:req.body}); 
+                    res.send({"message":"Data UPDATED"});
+            });
+            app.delete("/deleteuser/:name?",async (req,res)=>{
+              let deleteData=await users.deleteOne(req.params);
+              res.send(deleteData);
+
+            })
+             
+
+
             app.get('*',(req,res)=>{
             
                    res.json([{"message":"Error"}]);
@@ -46,7 +49,7 @@ const uri = "mongodb://127.0.0.1/grocerystore";
 
     }).catch((err)=>{
 
-        console.log("connection failed");
+       
     });
  
     app.listen(5000);
