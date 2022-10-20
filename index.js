@@ -8,14 +8,19 @@ const cors=require("cors");
   app.use(cors());
   app.use(express.json());
 /*srv*
-mongodb://Unigrocery:xgZHEW2MlTp3oRYR@cluster0.2zyy2qt.mongodb.net/groceryshop?retryWrites=true&w=majority*/
+
+mongodb://127.0.0.1/grocerystore
+mongodb://127.0.0.1/grocerystore
+
+*/
 
 const uri = "mongodb://127.0.0.1/grocerystore";
 
    mongoose.connect(uri,{useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
-  
+        console.log("connect");
             app.get('/products',async function(req,res){
                   let ProductData=await products.find();
+             
                    res.send(ProductData);
             });
         
@@ -39,17 +44,14 @@ const uri = "mongodb://127.0.0.1/grocerystore";
               res.send(deleteData);
 
             })
-             
-
-
             app.get('*',(req,res)=>{
             
                    res.json([{"message":"Error"}]);
             });
 
     }).catch((err)=>{
-
-       
+        
+       console.log("not connect");
     });
  
     app.listen(5000);
