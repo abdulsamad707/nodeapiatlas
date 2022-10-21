@@ -1,43 +1,18 @@
 
-import React,{useEffect,useState} from "react";
-import User from './header';
+
+import UserData from "./userdata";
+
 
 
 
   function App() {
 
-    const [data, setdata] = useState([]);
-   
-
-    useEffect(() => {
-
-      
-      fetch("http://127.0.0.1:5000/users").then((result)=>{
-        result.json().then((resp)=>{
-  
-         setdata(resp);
-            
-        });
-      });
-  
-    
-    },[])
-
-
-    
-  return (
-  
-       
-   
-         
-        
-           {data.map((item,index)=>
-                     <User data={item} key={index}/>
-                
-           )}
-        
-    
-  );
+    return(
+      <>
+      <UserData/>
+     
+      </>
+    )
 }
 
 export default App;
