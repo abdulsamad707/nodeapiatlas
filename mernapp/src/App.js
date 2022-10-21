@@ -27,7 +27,7 @@ import User from './header';
     
   return (
   
-       <>  
+       
    
          
         
@@ -36,7 +36,7 @@ import User from './header';
                 
            )}
         
-       </>
+    
   );
 }
 
