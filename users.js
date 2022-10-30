@@ -1,9 +1,9 @@
 const mongoose=require("mongoose");
 let productsSchema=new mongoose.Schema({
   
-    username:String,
-    email:String,
-    password:String,
-    activestatus:Number
+    name:String,
+ mobile:Number,
+ email:String
+
 });
-module.exports=mongoose.model('users',productsSchema);
+module.exports=mongoose.model('user',productsSchema);

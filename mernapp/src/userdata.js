@@ -6,9 +6,103 @@ import React,{useEffect,useState} from "react";
   function UserData() {
 
     const [data, setdata] = useState([]);
-   
+    const [name,NameSet]=useState("");
+     const[email,EmailSet]=useState("");
+     let [mobile,MobileSet]=useState("");
+     let [userId,IdSet]=useState("");
 
-    useEffect(() => {
+    let [ButtonName,ButtonSetName]=useState("Register User");
+  const submitForm= async(e)=>{
+    let    actionForm="";
+    let   actionUrl="";
+      e.preventDefault();
+    
+        if(userId===""||userId===undefined){
+          actionForm ="POST";
+          actionUrl   ="http://localhost:5000/registeruser";
+        }else{
+          actionForm="PUT";
+          actionUrl=`http://localhost:5000/update/${userId}`
+
+        }
+        console.log(actionForm);
+        console.log(actionUrl);
+      mobile=parseInt(mobile);
+   
+      
+
+     fetch(`${actionUrl}`,{
+
+     
+         method:`${actionForm}`,
+
+         body:JSON.stringify({mobile,email,name}),
+         headers:{
+             "Content-Type":"application/json"
+         }
+     }).then((result)=>{return result.json()}).then((finalresul)=>{
+
+
+            
+      IdSet("");
+ 
+      console.log(finalresul);
+      ButtonSetName("Register User");
+      NameSet("");
+      EmailSet("");
+      MobileSet("");
+      getData();
+     });
+ 
+      
+ }
+ useEffect(() => {
+  getData();
+
+},[]);
+function edit(id){
+ 
+  IdSet(id);
+  fetch(`http://127.0.0.1:5000/users/${id}`).then((result)=>{
+    result.json().then((resp)=>{
+         console.log(resp);
+
+         let username=resp[0].name;
+       
+      NameSet(username);
+      EmailSet(resp[0].email);
+      MobileSet(resp[0].mobile);
+      
+         
+     });
+});
+
+  ButtonSetName("Update User");
+
+}
+const deleteRecord = id =>  {
+
+
+
+console.log(id);
+     
+fetch(`http://127.0.0.1:5000/deleteuser/${id}`,{method:"DELETE"}).then((result)=>{
+  result.json().then((resp)=>{
+       console.log(resp);
+
+      getData();
+    
+       
+   });
+});
+} 
+
+    function getData(userIid=""){
+
+
+    
+
+
 
       
       fetch("http://127.0.0.1:5000/users").then((result)=>{
@@ -20,16 +114,27 @@ import React,{useEffect,useState} from "react";
       });
   
     
-    },[])
-
+  
+    }
     const styles={
       tr:{
-       backgroundColor:"yellow"
-   
+       
+       padding:"12px",
+        
       },
+         td:{
+   border:"1px solid black",
+   padding:"12px",
+
+   textAlign:"center"
+         },
        table:{
         border:"1px solid black",
-        borderCollapse:"collapse"
+        borderCollapse:"collapse",
+        alignItem:"center",
+        justifyContent:"center",
+        margin:"auto",
+        padding:"auto"
 
        }
     }
@@ -38,12 +143,46 @@ import React,{useEffect,useState} from "react";
   
        
 
-   <> <table style={styles.table} >
+   <> 
+   <button>Add User</button>
+    <table style={styles.table} >
+
+      <tbody>
+
+         <tr>
+          <th>S.No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+
+        <th colSpan="2">Action</th>
+
+         </tr>
         {
-              data.map((item)=><tr style={styles.tr}><td>{item.username}</td><td>{item.email}</td></tr>)
+      
+              data.map((item,index)=><tr key={index} style={styles.td}>
+                
+                
+                
+                <td >{index+1}</td><td>{item.name}</td><td>{item.email}</td><td>{item.mobile}</td><td><button onClick={()=>{deleteRecord(item._id)}}>Delete</button></td><td><button onClick={()=>{edit(item._id)}} >Edit</button></td></tr>)
                   
         }
+           </tbody>
         </table>
+        <div className="FormDiv">
+
+<form onSubmit ={submitForm}>
+
+   UserName <input type="text" value={name} onChange={(e)=>{NameSet(e.target.value)}} /><br/>
+ Email   <input type="text" value={email} onChange={(e)=>{EmailSet(e.target.value)}}   /> <br/>
+ Mobile   <input type="text" value={mobile} onChange={(e)=>{MobileSet(e.target.value)}}   /> <br/>    
+   <input type="text" value={userId} onChange={(e)=>{IdSet()}}/>      
+    <input  type="submit" value={ButtonName} onChange={(e)=>{ButtonSetName()}} />
+</form>
+</div>
+
+
+
    </>
          
   )

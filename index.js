@@ -4,9 +4,9 @@ const mongoose=require("mongoose");
 const products=require('./products');
 const users=require('./users');
 const cors=require("cors");
-
+app.use(express.json());
   app.use(cors());
-  app.use(express.json());
+
 /*srv*
 
 mongodb://127.0.0.1/grocerystore
@@ -25,21 +25,35 @@ const uri = "mongodb://127.0.0.1/grocerystore";
             });
         
             app.post("/registeruser", async (reqe,res)=>{
+         
+              
               let userRegisterStatus=new users(reqe.body);
+
+
               let result =await userRegisterStatus.save();
-              res.send({"message":"Data Save"});
+              res.send(result);
+
+           console.log(result);
+              console.log(reqe.body);
+            
             });
-            app.get('/users',async (req,res)=>{
+            app.get('/users/:id?',async (req,res)=>{
+               userId=req.params.id;
+               console.log(userId);
+               if(userId==undefined){
               userData=await users.find();
+               }else{
+                userData=await users.find({_id:userId});
+               }
               res.send(userData);
             });
 
 
             app.put("/update/:_id",async (req,res)=>{
                     let updateData=await users.updateOne(req.params,{$set:req.body}); 
-                    res.send({"message":"Data UPDATED"});
+                    res.send({"message":"Data UPDATED","data":updateData});
             });
-            app.delete("/deleteuser/:name?",async (req,res)=>{
+            app.delete("/deleteuser/:_id?",async (req,res)=>{
               let deleteData=await users.deleteOne(req.params);
               res.send(deleteData);
 

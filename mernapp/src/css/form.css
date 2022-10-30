@@ -1,0 +1,9 @@
+.FormDiv{
+    display: flex;
+    background-color: blue;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+}
