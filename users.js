@@ -1,9 +1,14 @@
 const mongoose=require("mongoose");
 let productsSchema=new mongoose.Schema({
   
-    name:String,
+    name:{type:String},
  mobile:Number,
- email:String
+ email:String,
+ date:{
+    type:Date,
+    default:Date.now
+ }
+
 
 });
 module.exports=mongoose.model('user',productsSchema);

@@ -1,8 +1,7 @@
-import React,{useEffect,useState} from "react";
 
 
 
-
+  import React,{useEffect,useState} from "react";
   function UserData() {
 
     const [data, setdata] = useState([]);
@@ -45,12 +44,13 @@ import React,{useEffect,useState} from "react";
 
             
       IdSet("");
- 
+  
       console.log(finalresul);
       ButtonSetName("Register User");
       NameSet("");
       EmailSet("");
       MobileSet("");
+
       getData();
      });
  
@@ -81,20 +81,24 @@ function edit(id){
 
 }
 const deleteRecord = id =>  {
-
-
-
-console.log(id);
-     
-fetch(`http://127.0.0.1:5000/deleteuser/${id}`,{method:"DELETE"}).then((result)=>{
-  result.json().then((resp)=>{
-       console.log(resp);
-
-      getData();
+  console.log(id);
+  if(window.confirm("Are You Want to Delete")){
+    fetch(`http://127.0.0.1:5000/deleteuser/${id}`,{method:"DELETE"}).then((result)=>{
+      result.json().then((resp)=>{
+           console.log(resp);
     
-       
-   });
-});
+          getData();
+        
+           
+       });
+    });
+  }
+
+/*
+
+
+     
+*/
 } 
 
     function getData(userIid=""){
@@ -136,6 +140,9 @@ fetch(`http://127.0.0.1:5000/deleteuser/${id}`,{method:"DELETE"}).then((result)=
         margin:"auto",
         padding:"auto"
 
+       },
+       nodata:{
+        textAlign:"center"
        }
     }
     
@@ -144,7 +151,7 @@ fetch(`http://127.0.0.1:5000/deleteuser/${id}`,{method:"DELETE"}).then((result)=
        
 
    <> 
-   <button>Add User</button>
+  
     <table style={styles.table} >
 
       <tbody>
@@ -154,19 +161,30 @@ fetch(`http://127.0.0.1:5000/deleteuser/${id}`,{method:"DELETE"}).then((result)=
         <th>Name</th>
         <th>Email</th>
         <th>Mobile</th>
-
+        <th>Register Date</th>
+        <th>Register Time</th>
         <th colSpan="2">Action</th>
 
          </tr>
-        {
-      
-              data.map((item,index)=><tr key={index} style={styles.td}>
+        {data.length>0?
+          
+           data.map((item,index)=><tr key={index} style={styles.td}>
+           
                 
                 
-                
-                <td >{index+1}</td><td>{item.name}</td><td>{item.email}</td><td>{item.mobile}</td><td><button onClick={()=>{deleteRecord(item._id)}}>Delete</button></td><td><button onClick={()=>{edit(item._id)}} >Edit</button></td></tr>)
-                  
+                <td >{index+1}</td><td>{item.name}</td><td>{item.email}</td><td>{item.mobile}</td><td>{new Date(item.date).toLocaleDateString([],{month:"long",year:"numeric",day:"numeric"}).replaceAll(" ","-")} </td><td>{new Date(item.date).toLocaleTimeString("en",{hour:"2-digit",minute:"2-digit",hour12:true})} </td><td><button onClick={()=>{deleteRecord(item._id)}}>Delete</button></td><td><button onClick={()=>{edit(item._id)}} >Edit</button></td></tr>)
+          :<tr><td colSpan="6" style={styles.nodata}>No Record Found</td></tr>
+         
         }
+           <tr>
+            <td>Total Record</td>
+            <td> : {data.length}</td>
+           </tr>
+
+             
+
+
+          
            </tbody>
         </table>
         <div className="FormDiv">
@@ -176,7 +194,7 @@ fetch(`http://127.0.0.1:5000/deleteuser/${id}`,{method:"DELETE"}).then((result)=
    UserName <input type="text" value={name} onChange={(e)=>{NameSet(e.target.value)}} /><br/>
  Email   <input type="text" value={email} onChange={(e)=>{EmailSet(e.target.value)}}   /> <br/>
  Mobile   <input type="text" value={mobile} onChange={(e)=>{MobileSet(e.target.value)}}   /> <br/>    
-   <input type="text" value={userId} onChange={(e)=>{IdSet()}}/>      
+   <input type="hidden" value={userId} onChange={(e)=>{IdSet()}}/>      
     <input  type="submit" value={ButtonName} onChange={(e)=>{ButtonSetName()}} />
 </form>
 </div>
