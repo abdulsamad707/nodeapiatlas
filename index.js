@@ -58,10 +58,7 @@ const uri = "mongodb://127.0.0.1/grocerystore";
               res.send(deleteData);
 
             })
-            app.get('*',(req,res)=>{
-            
-                   res.json([{"message":"Error"}]);
-            });
+         
 
     }).catch((err)=>{
         

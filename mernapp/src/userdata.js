@@ -163,6 +163,7 @@ const deleteRecord = id =>  {
         <th>Mobile</th>
         <th>Register Date</th>
         <th>Register Time</th>
+        <th>Register Day</th>
         <th colSpan="2">Action</th>
 
          </tr>
@@ -172,7 +173,7 @@ const deleteRecord = id =>  {
            
                 
                 
-                <td >{index+1}</td><td>{item.name}</td><td>{item.email}</td><td>{item.mobile}</td><td>{new Date(item.date).toLocaleDateString([],{month:"long",year:"numeric",day:"numeric"}).replaceAll(" ","-")} </td><td>{new Date(item.date).toLocaleTimeString("en",{hour:"2-digit",minute:"2-digit",hour12:true})} </td><td><button onClick={()=>{deleteRecord(item._id)}}>Delete</button></td><td><button onClick={()=>{edit(item._id)}} >Edit</button></td></tr>)
+                <td >{index+1}</td><td><img src="http://127.0.0.1:5000/img/pic1.jpg" alt="imgg"/></td><td>{item.name}</td><td>{item.email}</td><td>{item.mobile}</td><td>{new Date(item.date).toLocaleDateString([],{month:"short",year:"numeric",day:"numeric"}).replaceAll(" ","-")} </td><td>{new Date(item.date).toLocaleTimeString("en",{hour:"2-digit",minute:"2-digit",hour12:true})} </td><td>{new Date(item.date).toLocaleDateString([],{weekday:"long"})} </td> <td><button onClick={()=>{deleteRecord(item._id)}}>Delete</button></td><td><button onClick={()=>{edit(item._id)}} >Edit</button></td></tr>)
           :<tr><td colSpan="6" style={styles.nodata}>No Record Found</td></tr>
          
         }
