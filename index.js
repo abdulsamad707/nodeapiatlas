@@ -94,14 +94,42 @@ const uri = "mongodb://127.0.0.1/grocerystore";
                      console.log(req.body);
                      console.log(req.file);
                      filecomplete=req.file;
-                     updateobject= {
+                  console.log(filecomplete);
+                  if(filecomplete!=undefined){ 
+                  updateobject= {
                       name:req.body.name,
                       email:req.body.email,
                       mobile:req.body.mobile,
+                    
                       imgpath:"uploads/"+filecomplete.filename
                    }
-                  /*  let updateData=await users.updateOne(req.params,{$set:req.body}); 
-                    res.send({"message":"Data UPDATED","data":updateData});*/
+                  }else{
+                    updateobject= {
+                      name:req.body.name,
+                      email:req.body.email,
+                      mobile:req.body.mobile
+                    
+                     
+                   }
+                  }
+                  userId=req.params._id;
+                  console.log(userId);
+                  userData=await users.find({_id:userId});
+    
+                  console.log(userData[0].imgpath);
+                if(filecomplete!=undefined){ 
+                  if(fs.existsSync(userData[0].imgpath)){
+                  fs.unlinkSync(userData[0].imgpath,(err)=>{
+                    console.log(err);
+                  });
+                  }
+                }
+
+
+
+                  
+                    let updateData=await users.updateOne(req.params,{$set:updateobject}); 
+                    res.send({"message":"Data UPDATED","data":updateData});
                     console.log(updateobject);
             });
             app.delete("/deleteuser/:_id?",async (req,res)=>{
