@@ -4,6 +4,7 @@ let productsSchema=new mongoose.Schema({
     name:{type:String},
  mobile:Number,
  email:String,
+ imgpath:String,
  date:{
     type:Date,
     default:Date.now

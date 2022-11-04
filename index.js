@@ -4,42 +4,80 @@ const mongoose=require("mongoose");
 const products=require('./products');
 const users=require('./users');
 const cors=require("cors");
+app.use(cors());
+const multer=require("multer");  
+const fs=require("fs");
 app.use(express.json());
-  app.use(cors());
 
+app.use('/uploads',express.static("uploads"));
 /*srv*
 
 mongodb://127.0.0.1/grocerystore
 mongodb://127.0.0.1/grocerystore
 
 */
+const  upload= multer({
+storage:multer.diskStorage({
+  destination:function(req,file,cb){
+    cb(null,"uploads")
+  },filename:function(req,file,cb){
+    filetype=file.mimetype;
+    filetype=filetype.split("/");
+    filetype=filetype[1];
+  
+    cb(null,Date.now()+"."+filetype);
+  }
+})
 
+}).single("file_user");
 const uri = "mongodb://127.0.0.1/grocerystore";
 
    mongoose.connect(uri,{useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
-        console.log("connect");
+        
             app.get('/products',async function(req,res){
                   let ProductData=await products.find();
              
                    res.send(ProductData);
             });
-        
-            app.post("/registeruser", async (reqe,res)=>{
          
-              
-              let userRegisterStatus=new users(reqe.body);
+            app.post("/registeruser",upload, async (reqe,res)=>{
+                console.log(reqe.file);
+             filecomplete=reqe.file;
+              filetype=filecomplete.mimetype;
+              filetype=filetype.split("/");
+              filetype=filetype[1];  
+              email=reqe.body.email;
+              mobile=reqe.body.user;
+             
+             regobject= {
+                name:reqe.body.name,
+                email:reqe.body.email,
+                mobile:reqe.body.mobile,
+                imgpath:"uploads/"+filecomplete.filename
+             }
+             console.log(regobject);
+             let userRegisterStatus=new users(regobject);
+                   console.log(reqe.file);
+                   console.log(reqe.body);
+                 
+                  console.log(filetype);
 
+                  size=filecomplete.size;
 
-              let result =await userRegisterStatus.save();
+              let result =await userRegisterStatus.save(
+
+              );
               res.send(result);
 
-           console.log(result);
-              console.log(reqe.body);
+
+
+
+       
             
             });
             app.get('/users/:id?',async (req,res)=>{
                userId=req.params.id;
-               console.log(userId);
+            
                if(userId==undefined){
               userData=await users.find();
                }else{
@@ -49,15 +87,46 @@ const uri = "mongodb://127.0.0.1/grocerystore";
             });
 
 
-            app.put("/update/:_id",async (req,res)=>{
-                    let updateData=await users.updateOne(req.params,{$set:req.body}); 
-                    res.send({"message":"Data UPDATED","data":updateData});
+            app.put("/update/:_id",upload,async (req,res)=>{
+
+
+
+                     console.log(req.body);
+                     console.log(req.file);
+                     filecomplete=req.file;
+                     updateobject= {
+                      name:req.body.name,
+                      email:req.body.email,
+                      mobile:req.body.mobile,
+                      imgpath:"uploads/"+filecomplete.filename
+                   }
+                  /*  let updateData=await users.updateOne(req.params,{$set:req.body}); 
+                    res.send({"message":"Data UPDATED","data":updateData});*/
+                    console.log(updateobject);
             });
             app.delete("/deleteuser/:_id?",async (req,res)=>{
-              let deleteData=await users.deleteOne(req.params);
-              res.send(deleteData);
 
-            })
+              userId=req.params._id;
+              console.log(userId);
+              userData=await users.find({_id:userId});
+
+              console.log(userData[0].imgpath);
+
+              if(fs.existsSync(userData[0].imgpath)){
+              fs.unlinkSync(userData[0].imgpath,(err)=>{
+                console.log(err);
+              });
+              }
+              
+              let deleteData=await users.deleteOne(req.params);
+                remaining =await users.find();
+              res.send(remaining);
+
+            });
+            app.post("/upload",upload,function(req,res){
+                res.send("i");
+                
+            });
          
 
     }).catch((err)=>{
