@@ -1,21 +1,28 @@
 
 
+import { Route,Routes,BrowserRouter,Link } from "react-router-dom";
 import UserData from "./userdata";
-import UserRegister from "./userRegister";
+
 
 
 
   function App() {
 
     return(
-      <> 
-
-
-
-      <UserData/>
-     
+      <>
+    <BrowserRouter>
+  <Link  to="/user">User</Link>
+    <Routes>
+      <Route path="/" element={<UserData/>}></Route>
+      
+</Routes>
+</BrowserRouter>
+         
       </>
     )
-}
+    
+    
+    
+    }
 
 export default App;

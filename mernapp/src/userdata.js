@@ -2,7 +2,13 @@
 
 
   import React,{useEffect,useState} from "react";
+  import moment from 'moment';
+  import "./css/form.css";
+
+  
+
   function UserData() {
+
     const [files,setFileDetail]=useState([]);
     const [data, setdata] = useState([]);
     const [name,NameSet]=useState("");
@@ -162,13 +168,14 @@ const deleteRecord = id =>  {
         textAlign:"center"
        }
     }
-    
+  
   return (
   
        
 
    <> 
-  
+{moment().format("dddd D h:mm:ss a")}
+
     <table style={styles.table} >
 
       <tbody>
