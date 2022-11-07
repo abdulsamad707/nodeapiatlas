@@ -1,8 +1,9 @@
 
 
-import { Route,Routes,BrowserRouter,Link } from "react-router-dom";
+import { Route,Routes,BrowserRouter,NavLink } from "react-router-dom";
 import UserData from "./userdata";
-
+import Welcome from "./Welcome";
+import './css/nav.css';
 
 
 
@@ -11,9 +12,14 @@ import UserData from "./userdata";
     return(
       <>
     <BrowserRouter>
-  <Link  to="/user">User</Link>
+    <ul>
+    <li><NavLink className="nav-link" to="/user">User</NavLink></li>
+    </ul>
+    <NavLink  to="/">Home</NavLink>
+    <NavLink  to="/products">Product</NavLink>
     <Routes>
-      <Route path="/" element={<UserData/>}></Route>
+      <Route path="/" element={<Welcome/>}></Route>
+      <Route path="/user" element={<UserData/>}></Route>
       
 </Routes>
 </BrowserRouter>

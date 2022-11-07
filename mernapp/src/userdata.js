@@ -75,56 +75,16 @@
   
       
  }
- useEffect(() => {
-  getData();
 
-});
+
 const SelectFiles=(e)=>{
 console.log(e.target.files[0]);
 setFileDetail(e.target.files[0]);
 }
-function edit(id){
- 
-  IdSet(id);
-  fetch(`http://127.0.0.1:5000/users/${id}`).then((result)=>{
-    result.json().then((resp)=>{
-         console.log(resp);
-
-         let username=resp[0].name;
-       
-      NameSet(username);
-      EmailSet(resp[0].email);
-      MobileSet(resp[0].mobile);
-      
-         
-     });
-});
-
-  ButtonSetName("Update User");
-
-}
-const deleteRecord = id =>  {
-  console.log(id);
-  if(window.confirm("Are You Want to Delete")){
-    fetch(`http://127.0.0.1:5000/deleteuser/${id}`,{method:"DELETE"}).then((result)=>{
-      result.json().then((resp)=>{
-           console.log(resp);
-    
-          getData();
-        
-           
-       });
-    });
-  }
-
-/*
 
 
-     
-*/
-} 
 
-    function getData(userIid=""){
+    const getData=(userIid="")=>{
 
 
     
@@ -168,7 +128,60 @@ const deleteRecord = id =>  {
         textAlign:"center"
        }
     }
-  
+    useEffect(() => {
+      getData();
+    
+         });
+
+
+
+
+
+
+         const deleteRecord = id =>  {
+          console.log(id);
+          if(window.confirm("Are You Want to Delete")){
+            fetch(`http://127.0.0.1:5000/deleteuser/${id}`,{method:"DELETE"}).then((result)=>{
+              result.json().then((resp)=>{
+                   console.log(resp);
+            
+                  getData();
+                
+                   
+               });
+            });
+          }
+        
+        /*
+        
+        
+             
+        */
+        } 
+        function edit(id){
+ 
+          IdSet(id);
+          fetch(`http://127.0.0.1:5000/users/${id}`).then((result)=>{
+            result.json().then((resp)=>{
+                 console.log(resp);
+        
+                 let username=resp[0].name;
+               
+              NameSet(username);
+              EmailSet(resp[0].email);
+              MobileSet(resp[0].mobile);
+              
+                 
+             });
+        });                     
+                                                    
+          ButtonSetName("Update User");
+        
+        }
+
+
+
+
   return (
   
        
