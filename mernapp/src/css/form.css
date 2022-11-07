@@ -7,3 +7,11 @@
     margin: auto;
     padding: auto;
 }
+ul{
+    list-style-type: none;
+}
+.nav-link{
+    text-decoration: none;
+    list-style: none;
+
+}

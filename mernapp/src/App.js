@@ -14,9 +14,10 @@ import './css/nav.css';
     <BrowserRouter>
     <ul>
     <li><NavLink className="nav-link" to="/user">User</NavLink></li>
+
+    <li><NavLink className="nav-link" to="/">Home</NavLink>  </li>
+    <li> <NavLink className="nav-link"  to="/products">Product</NavLink></li>
     </ul>
-    <NavLink  to="/">Home</NavLink>
-    <NavLink  to="/products">Product</NavLink>
     <Routes>
       <Route path="/" element={<Welcome/>}></Route>
       <Route path="/user" element={<UserData/>}></Route>
