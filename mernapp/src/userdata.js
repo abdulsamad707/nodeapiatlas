@@ -1,8 +1,9 @@
 
 
 
-  import React,{useEffect,useState} from "react";
-  import moment from 'moment';
+  import React,{useState} from "react";
+import { NavLink } from "react-router-dom";
+  import Credential from "./Credential";
   import "./css/form.css";
 
   
@@ -15,8 +16,36 @@
      const[email,EmailSet]=useState("");
      let [mobile,MobileSet]=useState("");
      let [userId,IdSet]=useState("");
-     let APIPATH="http://localhost:5000/";
+     let [NoofMatch,NoofSetMatch]=useState("");
+     let [RunScore,RunScoreSet]=useState("");
+     let APIPATH=Credential;
     let [ButtonName,ButtonSetName]=useState("Register User");
+
+
+    
+
+
+      const getData=(userIid="")=>{
+
+
+    
+
+
+
+      
+        fetch(`${APIPATH}users`).then((result)=>{
+          result.json().then((resp)=>{
+          
+           setdata(resp);
+              
+          });
+        });
+
+
+
+      }
+      getData();
+    
   const submitForm= async(e)=>{
     let actionForm="";
     let actionUrl="";
@@ -36,10 +65,8 @@
    
       
     let  formData=new FormData();
-      formData.append("email",email);
-      formData.append("name",name);
-      formData.append("mobile",mobile);
 
+      formData.append("name",name);
       console.log(files.length);
     
       formData.append("file_user",files);
@@ -84,25 +111,7 @@ setFileDetail(e.target.files[0]);
 
 
 
-    const getData=(userIid="")=>{
-
-
-    
-
-
-
-      
-      fetch(`${APIPATH}users`).then((result)=>{
-        result.json().then((resp)=>{
-        
-         setdata(resp);
-            
-        });
-      });
   
-    
-  
-    }
     const styles={
       tr:{
        
@@ -128,10 +137,7 @@ setFileDetail(e.target.files[0]);
         textAlign:"center"
        }
     }
-    useEffect(() => {
-      getData();
-    
-         });
+
 
 
 
@@ -168,8 +174,7 @@ setFileDetail(e.target.files[0]);
                  let username=resp[0].name;
                
               NameSet(username);
-              EmailSet(resp[0].email);
-              MobileSet(resp[0].mobile);
+          
               
                  
              });
@@ -187,7 +192,7 @@ setFileDetail(e.target.files[0]);
        
 
    <> 
-{moment().format("dddd D h:mm:ss a")}
+
 
     <table style={styles.table} >
 
@@ -195,10 +200,10 @@ setFileDetail(e.target.files[0]);
 
          <tr>
           <th>S.No</th>
+          <th>Profile</th>
           <th>Image</th>
         <th>Name</th>
-        <th>Email</th>
-        <th>Mobile</th>
+
         <th>Register Date</th>
         <th>Register Time</th>
         <th>Register Day</th>
@@ -211,7 +216,7 @@ setFileDetail(e.target.files[0]);
            
 
                 
-                <td >{index+1}</td><td><img src={APIPATH+item.imgpath}alt="imgg"/></td><td>{item.name}</td><td>{item.email}</td><td>{item.mobile}</td><td>{new Date(item.date).toLocaleDateString([],{month:"short",year:"numeric",day:"numeric"}).replaceAll(" ","-")} </td><td>{new Date(item.date).toLocaleTimeString("en",{hour:"2-digit",minute:"2-digit",hour12:true})} </td><td>{new Date(item.date).toLocaleDateString([],{weekday:"long"})}</td><td><button onClick={()=>{deleteRecord(item._id)}}>Delete</button></td><td><button onClick={()=>{edit(item._id)}}>Edit</button></td></tr>)
+                <td >{index+1}</td><td><NavLink to={"/player/"+item.name}>Profile</NavLink></td><td><img src={APIPATH+item.imgpath}alt="imgg"/></td><td>{item.name}</td><td>{new Date(item.date).toLocaleDateString([],{month:"short",year:"numeric",day:"numeric"}).replaceAll(" ","-")} </td><td>{new Date(item.date).toLocaleTimeString("en",{hour:"2-digit",minute:"2-digit",hour12:true})} </td><td>{new Date(item.date).toLocaleDateString([],{weekday:"long"})}</td><td><button onClick={()=>{deleteRecord(item._id)}}>Delete</button></td><td><button onClick={()=>{edit(item._id)}}>Edit</button></td></tr>)
           :<tr><td colSpan="6" style={styles.nodata}>No Record Found</td></tr>
          
         }
@@ -228,21 +233,23 @@ setFileDetail(e.target.files[0]);
         </table>
         <div className="FormDiv">
 
+
 <form onSubmit ={submitForm} encType="form-data/multipart">
 
-   UserName <input type="text" value={name} onChange={(e)=>{NameSet(e.target.value)}} /><br/>
- Email   <input type="text" value={email} onChange={(e)=>{EmailSet(e.target.value)}}   /> <br/>
- Mobile   <input type="text" value={mobile} onChange={(e)=>{MobileSet(e.target.value)}}   /> <br/>  
+Player Name <input type="text" value={name} onChange={(e)=>{NameSet(e.target.value)}} /><br/>
 
-    <input type="file" onChange={(e)=>{SelectFiles(e)}}/>  
-   <input type="hidden" value={userId} onChange={(e)=>{IdSet()}}/>      
-    <input  type="submit" value={ButtonName} onChange={(e)=>{ButtonSetName()}} />
+No of Match <input type="text"/><br/>
+
+Run Scored <input type="text"/><br/>
+<input type="file" onChange={(e)=>{SelectFiles(e)}}/>  
+<input type="hidden" value={userId} onChange={(e)=>{IdSet()}}/>      
+<input  type="submit" value={ButtonName} onChange={(e)=>{ButtonSetName()}} />
 </form>
 </div>
 
 
-
    </>
+ 
          
   )
 }
