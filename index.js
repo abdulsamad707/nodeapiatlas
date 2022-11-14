@@ -4,9 +4,15 @@ const mongoose=require("mongoose");
 const products=require('./products');
 const users=require('./users');
 const cors=require("cors");
+
+
 app.use(cors());
+   
 const multer=require("multer");  
 const fs=require("fs");
+const { db } = require("./products");
+const console = require("console");
+
 app.use(express.json());
 
 app.use('/uploads',express.static("uploads"));
@@ -67,6 +73,9 @@ const uri = "mongodb://127.0.0.1/grocerystore";
               let result =await userRegisterStatus.save(
 
               );
+              console.log(result._id);
+                   InsertId=result.id;
+                   console.log(InsertId);
               res.send(result);
 
 
@@ -75,15 +84,54 @@ const uri = "mongodb://127.0.0.1/grocerystore";
        
             
             });
+            app.get('/player/:name',async(req,res)=>{
+              userId=req.params.name;
+            
+              console.log(userId);
+            
+         var data=await users.aggregate([
+     
+          {
+            $match: { "name":userId }
+          },
+    
+          
+          {   
+              
+           $lookup: {
+                  from: "match_stats",
+                  localField: "_id",
+                  foreignField: "player_id",
+                  as: "career_stats",
+                },
+               
+              },
+        
+
+            
+            
+             
+            ]);
+          res.send(data);
+          
+            console.log(data);
+              // calling a endpoint to get response.
+           
+            });
             app.get('/users/:id?',async (req,res)=>{
                userId=req.params.id;
-            
+           
                if(userId==undefined){
               userData=await users.find();
                }else{
                 userData=await users.find({_id:userId});
                }
-              res.send(userData);
+              res.send(userData); 
+
+       
+
+
+
             });
 
 

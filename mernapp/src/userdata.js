@@ -35,9 +35,10 @@ import { NavLink } from "react-router-dom";
       
         fetch(`${APIPATH}users`).then((result)=>{
           result.json().then((resp)=>{
-          
+         
            setdata(resp);
-              
+           console.log(data);
+           console.log(typeof(data));
           });
         });
 
@@ -237,10 +238,18 @@ setFileDetail(e.target.files[0]);
 <form onSubmit ={submitForm} encType="form-data/multipart">
 
 Player Name <input type="text" value={name} onChange={(e)=>{NameSet(e.target.value)}} /><br/>
-
 No of Match <input type="text"/><br/>
-
 Run Scored <input type="text"/><br/>
+Average   <input type="text"/><br/>
+
+Strike Rate  <input type="text"/><br/>
+No of Centuries <input type="text"/><br/>
+No of Fifties <input type="text"/><br/>
+No of Wicket <input type="text"/><br/>
+No of 5 wicket (in a match) <input type="text"/><br/>
+Economy Rate <input type="text"/><br/>
+Best Bowiing Figuress <input type="text"/><br/>
+Match Type <input type="text"/><br/>
 <input type="file" onChange={(e)=>{SelectFiles(e)}}/>  
 <input type="hidden" value={userId} onChange={(e)=>{IdSet()}}/>      
 <input  type="submit" value={ButtonName} onChange={(e)=>{ButtonSetName()}} />

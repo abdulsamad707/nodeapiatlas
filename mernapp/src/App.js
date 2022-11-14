@@ -3,7 +3,7 @@
 import { Route,Routes,BrowserRouter,NavLink } from "react-router-dom";
 import UserData from "./userdata";
 import Welcome from "./Welcome";
-import PlayerProfile from "./component/PlayerProfile";
+
 
 
 
@@ -24,7 +24,7 @@ import PlayerProfile from "./component/PlayerProfile";
       <Route path="/" element={<Welcome/>}></Route>
       <Route path="/user" element={<UserData/>}></Route>
     
-      <Route path="/player/:name" element={<PlayerProfile />}></Route>
+  
 </Routes>
 </BrowserRouter>
          
