@@ -1,0 +1,30 @@
+.FormDiv{
+    display: flex;
+ 
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+}
+ul{
+    list-style-type: none;
+
+}
+ li{
+display: inline-block;
+  padding: 10px;
+}
+.nav-link{
+    text-decoration: none;
+
+    
+
+  display: inline-block;
+
+
+}
+ul .active{
+color: RED;
+
+}
