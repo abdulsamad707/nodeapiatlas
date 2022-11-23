@@ -10,18 +10,37 @@ import { NavLink } from "react-router-dom";
 
   function UserData() {
 
+
+
+  /*  NoofCenturies
+    NoofFifties
+NoofWicket
+NooffiveWicket
+EconomyRate 
+BestBowiingFiguress 
+StartCareerDate 
+Stadium
+    */
     const [files,setFileDetail]=useState([]);
     const [data, setdata] = useState([]);
     const [name,NameSet]=useState("");
-     const[email,EmailSet]=useState("");
-     let [mobile,MobileSet]=useState("");
+     const[Average,AverageSet]=useState("");
+     let [StrikeRate,StrikeRateSet]=useState("");
      let [userId,IdSet]=useState("");
      let [NoofMatch,NoofSetMatch]=useState("");
      let [RunScore,RunScoreSet]=useState("");
+     let [NoofCenturies,NoofCenturiesset]=useState();
+     let [NoofFifties,NoofFiftiesSet]=useState();
+     let [NoofWicket,NoofWicketSet]=useState();
+     let [NooffiveWicket,NooffiveWicketSet]=useState();
+   let  [EconomyRate,EconomyRateSet] =useState("");
+   let   [BestBowiingFigures,BestBowiingFiguresSet] =useState("");
+   let  [StartCareerDate,StartCareerDateSet]=useState("");
+   let  [Stadium,Stadiumset]=useState("");
      let APIPATH=Credential;
-    let [ButtonName,ButtonSetName]=useState("Register User");
+     let [ButtonName,ButtonSetName]=useState("Register User");
 
-
+let [team,teamSet]=useState();
     
 
 
@@ -61,18 +80,38 @@ import { NavLink } from "react-router-dom";
         }
         console.log(actionForm);
         console.log(actionUrl);
-      mobile=parseInt(mobile);
+
    
       
     let  formData=new FormData();
 
-      formData.append("name",name);
+  
+  
+
+
+
+
+
       console.log(files.length);
-    
+      formData.append("name",name);
       formData.append("file_user",files);
-      console.log(FormData);
-      
+      formData.append("average",Average);
+ 
+      formData.append("strikeRate",StrikeRate);
+      formData.append("noofMatch",NoofMatch);
+      formData.append("RunScore",RunScore);
+  formData.append("NoofCenturies",NoofCenturies);
+  formData.append("NoofFifties",NoofFifties);
+  formData.append("NoofMatch",NoofMatch);
+  formData.append("NoofWicket",NoofWicket);
+  formData.append("NooffiveWicket",NooffiveWicket);
+  formData.append("EconomyRate",EconomyRate );
+  formData.append("BestBowiingFigures",BestBowiingFigures );
+  formData.append("StartCareerDate",StartCareerDate );
+  formData.append("Stadium",Stadium);
+  formData.append("team",team);
      fetch(`${actionUrl}`,{
+
 
      
          method:`${actionForm}`,
@@ -215,7 +254,7 @@ setFileDetail(e.target.files[0]);
            
 
                 
-                <td >{index+1}</td><td><NavLink to={"/player/"+item.name}>Profile</NavLink></td><td><img src={APIPATH+item.imgpath}alt="imgg"/></td><td>{item.name}</td><td>{new Date(item.date).toLocaleDateString([],{month:"short",year:"numeric",day:"numeric"}).replaceAll(" ","-")} </td><td>{new Date(item.date).toLocaleTimeString("en",{hour:"2-digit",minute:"2-digit",hour12:true})} </td><td>{new Date(item.date).toLocaleDateString([],{weekday:"long"})}</td><td><button onClick={()=>{deleteRecord(item._id)}}>Delete</button></td><td><button onClick={()=>{edit(item._id)}}>Edit</button></td></tr>)
+                <td >{index+1}</td><td><NavLink to={"/player/"+item._id}>Profile</NavLink></td><td><img src={APIPATH+item.imgpath}alt="imgg"/></td><td>{item.name}</td><td>{new Date(item.date).toLocaleDateString([],{month:"short",year:"numeric",day:"numeric"}).replaceAll(" ","-")} </td><td>{new Date(item.date).toLocaleTimeString("en",{hour:"2-digit",minute:"2-digit",hour12:true})} </td><td>{new Date(item.date).toLocaleDateString([],{weekday:"long"})}</td><td><button onClick={()=>{deleteRecord(item._id)}}>Delete</button></td><td><button onClick={()=>{edit(item._id)}}>Edit</button></td></tr>)
           :<tr><td colSpan="6" style={styles.nodata}>No Record Found</td></tr>
          
         }
@@ -236,18 +275,21 @@ setFileDetail(e.target.files[0]);
 <form onSubmit ={submitForm} encType="form-data/multipart">
 
 Player Name <input type="text" value={name} onChange={(e)=>{NameSet(e.target.value)}} /><br/>
-No of Match <input type="text"/><br/>
-Run Scored <input type="text"/><br/>
-Average   <input type="text"/><br/>
+No of Match <input type="text" onChange={(e)=>{NoofSetMatch(e.target.value) }}    /><br/>
+Run Scored <input type="text  "onChange={(e)=>{RunScoreSet(e.target.value)}}/><br/>
+Average   <input type="text" onChange={(e)=>{AverageSet(e.target.value)}}/><br/>
 
-Strike Rate  <input type="text"/><br/>
-No of Centuries <input type="text"/><br/>
-No of Fifties <input type="text"/><br/>
-No of Wicket <input type="text"/><br/>
-No of 5 wicket (in a match) <input type="text"/><br/>
-Economy Rate <input type="text"/><br/>
-Best Bowiing Figuress <input type="text"/><br/>
-Match Type <input type="text"/><br/>
+Strike Rate  <input type="text" onChange={(e)=>{StrikeRateSet(e.target.value)}}/><br/>
+No of Centuries <input type="text" onChange={(e)=>{NoofCenturiesset(e.target.value)}} /><br/>
+No of Fifties <input type="text" onChange={(e)=>{NoofFiftiesSet(e.target.value)}} /><br/>
+No of Wicket <input type="text"onChange={(e)=>{NoofWicketSet(e.target.value)}} /><br/>
+No of 5 wicket (in a match) <input type="text" onChange={(e)=>{NooffiveWicketSet(e.target.value)}}/><br/>
+Economy Rate <input type="text" onChange={(e)=>{EconomyRateSet(e.target.value)}}/><br/>
+Best Bowiing Figuress <input type="text" onChange={(e)=>{BestBowiingFiguresSet(e.target.value)}}/><br/>
+
+Stadium <input type="text" onChange={(e)=>{Stadiumset(e.target.value)}} /><br/>
+Team Against <input type="text" onChange={(e)=>{teamSet(e.target.value)}} /><br/>
+Start Career Date <input type="date"onChange={(e)=>{StartCareerDateSet(e.target.value)}} /><br/>
 <input type="file" onChange={(e)=>{SelectFiles(e)}}/>  
 <input type="hidden" value={userId} onChange={(e)=>{IdSet()}}/>      
 <input  type="submit" value={ButtonName} onChange={(e)=>{ButtonSetName()}} />

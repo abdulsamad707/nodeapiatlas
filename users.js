@@ -17,8 +17,7 @@ let productsSchema=new mongoose.Schema({
  battingStyle:String,
  bowlingStyle:String,
  placeBirth:String,
- cricPlayerId:String
-
-
+ cricPlayerId:String,
+ teamPlayed:String
 });
 module.exports=mongoose.model('user',productsSchema);

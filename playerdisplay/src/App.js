@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Route,Routes,BrowserRouter,NavLink } from "react-router-dom";
+import { Route,Routes,BrowserRouter,NavLink, Outlet } from "react-router-dom";
 import UserData from "./userdata";
 import Welcome from "./Welcome";
 import PlayerProfile from "./component/PlayerProfile";
@@ -18,8 +18,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Welcome/>}></Route>
       <Route path="/user" element={<UserData/>}></Route>
-      <Route path='/player/:name' element={<PlayerProfile/>}></Route>
-  
+      <Route path='/player/:id' element={<PlayerProfile/>}></Route>
+
 </Routes>
 </BrowserRouter>
 </>
