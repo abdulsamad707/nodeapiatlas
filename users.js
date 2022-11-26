@@ -18,6 +18,7 @@ let productsSchema=new mongoose.Schema({
  bowlingStyle:String,
  placeBirth:String,
  cricPlayerId:String,
- teamPlayed:String
+ teamPlayed:String,
+ imageFullPath:String
 });
 module.exports=mongoose.model('user',productsSchema);

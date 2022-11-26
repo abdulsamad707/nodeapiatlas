@@ -12,7 +12,7 @@ function App() {
     <li><NavLink className="nav-link" to="/user"> Players</NavLink></li>
 
     <li><NavLink  className="nav-link" to="/products">Add Players</NavLink></li>
-    
+    <Outlet/>
   
     </ul>
     <Routes>
