@@ -1,7 +1,14 @@
 const mongoose=require("mongoose");
 let productsSchema=new mongoose.Schema({
-    _id:mongoose.Schema.Types.ObjectId,
+
     name:String,
-    price:Number
+    price:Number,
+    keyword:String,
+    imgpath:String,
+    productStatus:String,
+    added_on:{
+        type:Date,
+        default:Date.now
+    }
 });
-module.exports=mongoose.model('products',productsSchema);
+module.exports=mongoose.model('product',productsSchema);

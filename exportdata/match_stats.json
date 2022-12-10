@@ -1,0 +1,93 @@
+[{
+  "_id": {
+    "$oid": "63841bb12bec1a9218a519f8"
+  },
+  "playerId": {
+    "$oid": "63841bb12bec1a9218a519f5"
+  },
+  "t20matchdebutdate": {
+    "$date": {
+      "$numberLong": "1490511600000"
+    }
+  },
+  "biography": "Shadab Khan born in 1998 in Mianwali has already created ripples with his leg-breaks, and more than ripples with his wrong'uns at the Under-19 level. Hailing from the land of stalwarts like Imran Khan and Misbah-ul-Haq, Shadab moved to Rawalpindi at the age of 12 and started picking up the nuances of the sport whilst playing for his school team. He further accelerated his growth and whilst training at the National Cricket Academy in Lahore, and gathered some valuable wisdom from former greats like Abdul Qadir and Mushtaq Ahmed.  Shadab was rising through the ranks and polishing himself up alarmingly fast, and looked all set to be a stereotypical precocious talent from Pakistan. He was promptly selected for the Under-19 World Cup in 2016 and he rewarded the faith of the selectors by topping the wicket charts in the tournament, picking up 11 wickets from 6 games at a commendable average of 19.   Unlike the modern limited-overs spinner, Shadab bowls with a more loopy trajectory and uses his wit and guile to fox the batsmen in the air. He uses the crease well bowling from close to the stumps as well as from a wider angle, to make the batsman recalibrate his eye-line. His consistent performances ensured defending champions Islamabad United drafted him in for the second edition of the PSL. Shadab impressed immediately with his wily variations and flight and ended the campaign with 9 wickets from 8 games. In addition, he maintains high levels of fitness and is a terrific fielder at point, in stark contrast to the stereotypical stick-to-your-thing Pakistani spinner.   Shadab had done enough to prompt the selectors who awarded him a with T20I cap against the Windies in March 2017. He embraced his opportunity as well, with figures of 4-0-7-3 on debut, which won him the Man of the Match award, and the distinction for the most economical spell on T20I debut. He already has 3 such awards in his first 10 T20Is. He also has one man-of-the-match award in ODIs for his 3-wicket-haul and a composed fifty, in the course of which he exhibited maturity beyond his years and pulled off a nerve-wracking chase against Sri Lanka.   He was also a part of the Pakistan team that won the ICC Champions Trophy 2017 in England. He was given a Test cap against the West Indies the following month, in which he took just one wicket. However, the teenage prodigy is certainly an excellent find for Pakistan and, if honed properly, a potential great in the making.   Cricketing idol - Shane Warne  by Cricbuzz Staff  as of December 2017",
+  "t20matchdebutTeam": " West Indies",
+  "t20matchdebutStadium": " Kensington Oval",
+  "NumberOffifties": 1,
+  "NumberOfHudred": 0,
+  "NumberOfmatch": 84,
+  "average": 19.04,
+  "runs": 476,
+  "StrikeRate": 143.81,
+  "teamPlay": "Pakistan U19, Pakistan A, Islamabad United, Pakistan, Trinbago Knight Riders, Khulna Titans, Brisbane Heat, Guyana Amazon Warriors, Edmonton Royals, Dhaka Platoon, Team White, Team Green, Manchester Originals, Sydney Sixers, Yorkshire",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63841d86f2c7822951ad2dbc"
+  },
+  "playerId": {
+    "$oid": "63841d86f2c7822951ad2dba"
+  },
+  "t20matchdebutdate": {
+    "$date": {
+      "$numberLong": "1473231600000"
+    }
+  },
+  "biography": "When Babar Azam notched up his 5th ODI ton against West Indies in his 25th innings in early 2017, he became the second quickest after Quinton De Kock to score five ODI tons. His aggregate of 1306 runs after 25 knocks tallied the highest, beating Jonathan Trott's numbers. Life indeed has been on fast tracks for Babar Azam. His three consecutive ODI tons against the Windies in 2016 in the UAE were a precursor to one glorious career that stares at us.   Pakistan's search for a dependable number 3 in the shorter formats has been an eternal one. Their batting stocks at the international level, especially in the shorter formats have looked as bare as Old Mother Hubbard's cupboard. The arrival of Babar onto the big scene however can't exactly be termed as serendipity.   Ever since he was drafted into the Pakistan under-19 team for the 2010 World Cup as a fifteen year old, it seemed as if another raw talent has been unleashed. However, some polishing resulted in another under-19 World Cup campaign in 2012. This time he was the skipper. Pakistan were knocked out by eventual winners India but Babar had piled the runs to be the top run getter for his team.   The journey post that was through the domestic system and come his chance in 2016, Babar grabbed it with hands as big as tentacles against the Windies in the UAE. A Test debut against the caribbean team also went well and the fairytale had a continuity. But flaws were ripped open on the bouncy tracks of Australia in late 2016 and early 2017 in the whites. But given the fact that he wants to emaluate Virat Kohli' feats and idolizes ABD, Babar would carve a way out.  Babar Azam is the cousin of Akmal (Kamran, Umar and Adnan) brothers and is often denoted as a talented opening batsman. He was the leading run-scorer in the tri-series that included Sri Lanka and Bangladesh Under - 19 in 2009. His consistency at Under - 19 level pushed the selectors to offer him a chance to play for his national side.  He was named in the Pakistan squad for Zimbabwe series at home where he got a great chance to make a debut on his home soil. He scored a fluent fifty in his debut and has shown glimpses of great stroke making ability. Babar then retained his spot for the Sri Lanka tour in July where he could play only 2 ODIs of the five-match series (as of August 2015).  Favourite cricketer - AB de Villiers.  By Cricbuzz staff       ",
+  "t20matchdebutTeam": " England",
+  "t20matchdebutStadium": " Emirates Old Trafford",
+  "NumberOffifties": 30,
+  "NumberOfHudred": 2,
+  "NumberOfmatch": 99,
+  "average": 41.42,
+  "runs": 3355,
+  "StrikeRate": 127.81,
+  "teamPlay": "Pakistan U19, Sylhet Royals, Pakistan, Pakistan A, Islamabad United, Rangpur Riders, Karachi Kings, Guyana Amazon Warriors, Sylhet Sixers, Somerset, Dublin Chiefs, Team White, Team Green",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63842add7cc57f0f3454c464"
+  },
+  "playerId": {
+    "$oid": "63842add7cc57f0f3454c461"
+  },
+  "t20matchdebutdate": {
+    "$date": {
+      "$numberLong": "1429858800000"
+    }
+  },
+  "biography": "Mohammad Rizwan is a highly rated wicket-keeper batsman from Peshawar who idolizes Adam Gilchrist. He made his First Class debut for Peshawar in 2008 and impressed the selectors after a series of note-worthy performances with the bat and gloves. From Peshawar College team at the age of 17 to Pakistan national team at the age of 22 - it was an incredible hard-working journey for Rizwan.  In the earlier stages of his Under-19 career, he found it hard to cope up with the pressure of playing white-ball cricket. He, however, managed to overcome tough times with the help of his domestic coaches and mentors. After an 87-ball 103 from Rizwan steered Khyber-Pakhtunkhwa Fighters to clinch the  Pentangular One Day Cup with a six-wicket win in the final against Baluchistan Warriors, he pushed his case further for claiming a spot in the national side. Moreover, Peshawar Panthers became national T20 champions in 2014 and 2015 with Rizwan playing a pivotal role.  A big fan of the Brazil Football team, Rizwan is a full time wicket-keeper as well as a super fielder, anywhere on the ground. A busy batsman, Rizwan buzzes like a bee in the ears of the opposition while in full flow. He scored a valiant 67 off 58 balls in a losing cause in his debut game against Bangladesh in  2015. The retirements of Younis Khan and Misbah after the 2015 WC had opened up slots in the middle order and Rizwan had a dream start. He even landed a Test debut in New Zealand during Pakistan's 2016 tour although he played just that solitary game with a duck in his maiden innings.  It did seem that Rizwan would go on to become a mainstay of Pakistan's limited-overs outfit considering his attacking stroke play and wicket-keeping skills which would bring tremendous balance to the side's composition. However, his form dipped and what followed was a series of low scores. Pakistan's  a disastrous tour of Australia in 2016-17 was probably the push that the selectors needed to nip out the non-performers and Rizwan found himself out of the side after which he hasn't been picked for the national team again.  Rizwan's performances in the shortest format have been disappointing to say the least with all the flair he possesses. However, with age clearly on his side, Rizwan's career isn't done by any means. The fact that Pakistan's captain Sarfraz Ahmed is a wicket-keeper batsman might go against the young Peshawar  lad but his ability as a batsman and mobility as a fielder should earn him a spot as a specialist batsman if his bat can do the talking in the domestic circuit. Rizwan's recent form has been good and he will know more than anyone else that he has to keep them coming.  Written by Hariprasad Sadanandan",
+  "t20matchdebutTeam": " Bangladesh",
+  "t20matchdebutStadium": " Shere Bangla National Stadium",
+  "NumberOffifties": 23,
+  "NumberOfHudred": 1,
+  "NumberOfmatch": 80,
+  "average": 48.8,
+  "runs": 2635,
+  "StrikeRate": 126.62,
+  "teamPlay": "Pakistan, Lahore Qalandars, Pakistan U23, Sylhet Sixers, Karachi Kings, Pakistan A, Team White, Team Green, Multan Sultans, Sussex",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63845979ce7aea558a5dc31c"
+  },
+  "playerId": {
+    "$oid": "63845979ce7aea558a5dc319"
+  },
+  "t20matchdebutdate": {
+    "$date": {
+      "$numberLong": "1456729200000"
+    }
+  },
+  "biography": "Mohammad Nawaz hails from Rawalpindi, the city which produced cricketers like Shoaib Akhtar, Azhar Mahmood, Mohammad Wasim and Yasir Arafat. Nawaz is an all-rounder who has had great success at the junior level, and had been a pivotal member during his Under-19 cricketing days.   His consistency at the junior level helped him claim a spot in the National Cricket Academy squad (Pakistan) which toured West Indies for the World Championship during the year 2008. Since then he has represented Pakistan U-16's, 19's and had a great run both as a batsman and as a bowler.   He was also a regular member in the national side during the 2012 U-19 World Cup which was held in Australia. He plays for National Bank of Pakistan and Rawalpindi Rams in the domestic circuit and regional T20 league respectively.   Nawaz, who represented Quetta Gladiators in the inaugural Pakistan Super League, impressed one and all with his all-round abilities. He ended up as the third-highest wicket-taker of the season, and was soon drafted into the national side for Asia cup 2016 in Bangladesh.   After making his debut in the Asia cup against UAE, Nawaz didn't take long to commence his career in the other two formats. His ODI debut came against Ireland during Pakistan's tour of England in 2016, and the Test cricket baptism in October of the same year against the Windies. But after three Tests he has been overlooked by the selectors. The presence of Yasir Shah and the emergence of Shadab Khan meant he wasn't picked for the return series to the Windies in early 2017.   He was part of the ODI squad which toured Australia but only got one game on the tour. He was not picked for the Champions Trophy, which Pakistan eventually ended up winning.   When cricket returned to Pakistan in 2017, Nawaz was named in the 15-man squad to take on World XI. Before that, Benoni Zalmi bought him in the Global T20 League drafts.",
+  "t20matchdebutTeam": " United Arab Emirates",
+  "t20matchdebutStadium": " Shere Bangla National Stadium",
+  "NumberOffifties": 0,
+  "NumberOfHudred": 0,
+  "NumberOfmatch": 55,
+  "average": 17.58,
+  "runs": 422,
+  "StrikeRate": 130.25,
+  "teamPlay": "Pakistan U19, Pakistan A, Quetta Gladiators, Pakistan, Pakistan Cricket Board Patrons XI, Barisal Bulls, Benoni Zalmi, Cape Town Blitz, Sindhis, Sylhet Sixers, Edmonton Royals, Belfast Titans, Rajshahi Royals",
+  "__v": 0
+}]

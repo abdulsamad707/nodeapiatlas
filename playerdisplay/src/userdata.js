@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
   import Credential from "./Credential";
   import "./css/style.css";
 
-  
+
 
   function UserData() {
 
@@ -54,16 +54,21 @@ let [team,teamSet]=useState();
       
         fetch(`${APIPATH}users`).then((result)=>{
           result.json().then((resp)=>{
-         
+         console.log(resp);
            setdata(resp);
-    
+           console.log(resp);
           });
         });
 
 
 
       }
-      getData();
+    
+      
+    getData();
+    
+
+
     
   const submitForm= async(e)=>{
     let actionForm="";
@@ -222,7 +227,7 @@ setFileDetail(e.target.files[0]);
         
         }
 
-
+   
 
 
   return (

@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "63929a1aebebcdcd51b84d4d"
+  },
+  "name": "onion",
+  "price": 230,
+  "keyword": "onion vegetable",
+  "imgpath": "uploadProducts/1670552090287.jpeg",
+  "added_on": {
+    "$date": {
+      "$numberLong": "1670552090353"
+    }
+  },
+  "__v": 0
+}]

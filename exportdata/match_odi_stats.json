@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "63841bb12bec1a9218a51a02"
+  },
+  "playerId": {
+    "$oid": "63841bb12bec1a9218a519f5"
+  },
+  "noofmatch": 6,
+  "average": 33.33,
+  "runscore": 300,
+  "highestrun": 56,
+  "noofcenturies": 0,
+  "nooffifties": 3,
+  "strikerate": 62.63,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63841d86f2c7822951ad2dc6"
+  },
+  "playerId": {
+    "$oid": "63841d86f2c7822951ad2dba"
+  },
+  "noofmatch": 42,
+  "average": 47.3,
+  "runscore": 3122,
+  "highestrun": 196,
+  "noofcenturies": 7,
+  "nooffifties": 23,
+  "strikerate": 53.57,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63842ade7cc57f0f3454c46d"
+  },
+  "playerId": {
+    "$oid": "63842add7cc57f0f3454c461"
+  },
+  "noofmatch": 24,
+  "average": 41.07,
+  "runscore": 1232,
+  "highestrun": 115,
+  "noofcenturies": 2,
+  "nooffifties": 7,
+  "strikerate": 51.16,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63845979ce7aea558a5dc325"
+  },
+  "playerId": {
+    "$oid": "63845979ce7aea558a5dc319"
+  },
+  "noofmatch": 5,
+  "average": 14,
+  "runscore": 98,
+  "highestrun": 25,
+  "noofcenturies": 0,
+  "nooffifties": 0,
+  "strikerate": 35.64,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6384f2885b22c948123dd3a1"
+  },
+  "playerId": {
+    "$oid": "6384f2885b22c948123dd394"
+  },
+  "noofmatch": 27,
+  "average": 36.51,
+  "runscore": 1716,
+  "highestrun": 156,
+  "noofcenturies": 5,
+  "nooffifties": 8,
+  "strikerate": 86.97,
+  "__v": 0
+}]

@@ -11,6 +11,7 @@ NumberOfmatch:Number,
 average:Number,
 runs:Number,
 StrikeRate:Number,
+highestrun:Number,
 teamPlay:String,
 });
 module.exports=mongoose.model('match_stat',statsSchema);

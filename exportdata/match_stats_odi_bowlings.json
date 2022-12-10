@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "63841bb12bec1a9218a519fd"
+  },
+  "playerId": {
+    "$oid": "63841bb12bec1a9218a519f5"
+  },
+  "economyRate": 5.09,
+  "totalWicket": 70,
+  "bestBowlingmatch": "4/28",
+  "bowlAverage": 31.64,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63841d86f2c7822951ad2dc1"
+  },
+  "playerId": {
+    "$oid": "63841d86f2c7822951ad2dba"
+  },
+  "economyRate": 0,
+  "totalWicket": 0,
+  "bestBowlingmatch": "0/0",
+  "bowlAverage": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63842ade7cc57f0f3454c469"
+  },
+  "playerId": {
+    "$oid": "63842add7cc57f0f3454c461"
+  },
+  "economyRate": 0,
+  "totalWicket": 0,
+  "bestBowlingmatch": "0/0",
+  "bowlAverage": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63845979ce7aea558a5dc320"
+  },
+  "playerId": {
+    "$oid": "63845979ce7aea558a5dc319"
+  },
+  "economyRate": 4.93,
+  "totalWicket": 31,
+  "bestBowlingmatch": "4/19",
+  "bowlAverage": 28.87,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6384f2885b22c948123dd39c"
+  },
+  "playerId": {
+    "$oid": "6384f2885b22c948123dd394"
+  },
+  "economyRate": 4.63,
+  "totalWicket": 395,
+  "bestBowlingmatch": "7/12",
+  "bowlAverage": 34.51,
+  "__v": 0
+}]

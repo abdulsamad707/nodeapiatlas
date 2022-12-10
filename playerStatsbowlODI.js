@@ -2,7 +2,8 @@ const mongoose=require("mongoose");
 let statsbowlSchema=new mongoose.Schema({
 playerId:mongoose.Schema.Types.ObjectId,
 economyRate:Number,
-totalWicket:Number,
+
+totalWicket:String,
 
 bestBowlingmatch:String,
 bowlAverage:Number

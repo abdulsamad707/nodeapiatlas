@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "63841bb12bec1a9218a519f5"
+  },
+  "name": "shadab khan",
+  "imgpath": "uploads/1669602218504.jpeg",
+  "dateOfBirth": {
+    "$date": {
+      "$numberLong": "907484400000"
+    }
+  },
+  "role": "Bowling Allrounder",
+  "battingStyle": "Right Handed Bat",
+  "bowlingStyle": "Right-arm legbreak",
+  "placeBirth": "Mianwali",
+  "cricPlayerId": "26c7e157-99e8-46b3-9675-5350e8e79270",
+  "teamPlayed": "Pakistan U19, Pakistan A, Islamabad United, Pakistan, Trinbago Knight Riders, Khulna Titans, Brisbane Heat, Guyana Amazon Warriors, Edmonton Royals, Dhaka Platoon, Team White, Team Green, Manchester Originals, Sydney Sixers, Yorkshire",
+  "imageFullPath": "http://localhost:5000/uploads/1669602218504.jpeg",
+  "date": {
+    "$date": {
+      "$numberLong": "1669602225657"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63841d86f2c7822951ad2dba"
+  },
+  "name": "babar azam",
+  "imgpath": "uploads/1669602690122.jpeg",
+  "dateOfBirth": {
+    "$date": {
+      "$numberLong": "782204400000"
+    }
+  },
+  "role": "Batsman",
+  "battingStyle": "Right Handed Bat",
+  "bowlingStyle": "Right-arm offbreak",
+  "placeBirth": "Lahore, Punjab",
+  "cricPlayerId": "4ffc5d94-5a5f-4489-a09f-60e22090c810",
+  "teamPlayed": "Pakistan U19, Sylhet Royals, Pakistan, Pakistan A, Islamabad United, Rangpur Riders, Karachi Kings, Guyana Amazon Warriors, Sylhet Sixers, Somerset, Dublin Chiefs, Team White, Team Green",
+  "imageFullPath": "http://localhost:5000/uploads/1669602690122.jpeg",
+  "date": {
+    "$date": {
+      "$numberLong": "1669602694945"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63842add7cc57f0f3454c461"
+  },
+  "name": "mohammad rizwan",
+  "imgpath": "uploads/1669606098609.jpeg",
+  "dateOfBirth": {
+    "$date": {
+      "$numberLong": "707382000000"
+    }
+  },
+  "role": "WK-Batsman",
+  "battingStyle": "Right Handed Bat",
+  "placeBirth": "Peshawar, North-West Frontier Province",
+  "cricPlayerId": "78b310fd-7403-4abf-83e4-8ac8357be790",
+  "teamPlayed": "Pakistan, Lahore Qalandars, Pakistan U23, Sylhet Sixers, Karachi Kings, Pakistan A, Team White, Team Green, Multan Sultans, Sussex",
+  "imageFullPath": "http://localhost:5000/uploads/1669606098609.jpeg",
+  "date": {
+    "$date": {
+      "$numberLong": "1669606109974"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63845979ce7aea558a5dc319"
+  },
+  "name": "mohammad nawaz",
+  "imgpath": "uploads/1669618038339.jpeg",
+  "dateOfBirth": {
+    "$date": {
+      "$numberLong": "764233200000"
+    }
+  },
+  "role": "Bowling Allrounder",
+  "battingStyle": "Left Handed Bat",
+  "bowlingStyle": "Left-arm orthodox",
+  "placeBirth": "Rawalpindi, Punjab",
+  "cricPlayerId": "85c76b18-b9c7-48cb-b378-17edb2274e96",
+  "teamPlayed": "Pakistan U19, Pakistan A, Quetta Gladiators, Pakistan, Pakistan Cricket Board Patrons XI, Barisal Bulls, Benoni Zalmi, Cape Town Blitz, Sindhis, Sylhet Sixers, Edmonton Royals, Belfast Titans, Rajshahi Royals",
+  "imageFullPath": "http://localhost:5000/uploads/1669618038339.jpeg",
+  "date": {
+    "$date": {
+      "$numberLong": "1669618041177"
+    }
+  },
+  "__v": 0
+}]
